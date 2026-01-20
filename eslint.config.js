@@ -53,6 +53,13 @@ module.exports = defineConfig([
           order: 'asc',
         },
       ],
+      'perfectionist/sort-jsx-props': [
+        'error',
+        {
+          type: 'line-length',
+          order: 'asc',
+        },
+      ],
     },
     ignores: ['dist/*'],
   },

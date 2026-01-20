@@ -42,9 +42,9 @@ export default function AmasaDesignSystem() {
       <ScrollView style={{ backgroundColor: '#F5F7F8' }}>
         <YStack f={1} pb="$10">
           {/* Top Bar */}
-          <XStack p="$4" ai="center" bg="white" jc="space-between">
+          <XStack p="$4" bg="white" ai="center" jc="space-between">
             <ArrowLeft size={24} color="$gray900" />
-            <Text fontWeight="700" f={1} ta="center" pr="$8">
+            <Text f={1} pr="$8" ta="center" fontWeight="700">
               AMASA UI Kit
             </Text>
           </XStack>
@@ -52,10 +52,10 @@ export default function AmasaDesignSystem() {
           <YStack p="$4" gap="$8">
             {/* Headline */}
             <YStack>
-              <Text fos={32} fontWeight="700" lh={38} color="$gray900">
+              <Text lh={38} fos={32} fontWeight="700" color="$gray900">
                 Design System v1.0
               </Text>
-              <Text color="$gray600" fos={14}>
+              <Text fos={14} color="$gray600">
                 Documentation for Santo André mobile app components and tokens.
               </Text>
             </YStack>
@@ -66,21 +66,21 @@ export default function AmasaDesignSystem() {
                 Typography
               </Text>
               <YStack
-                bg="white"
                 br="$lg"
+                bg="white"
                 ov="hidden"
                 separator={<Separator borderColor="$gray100" />}
               >
-                <XStack p="$4" jc="space-between" ai="center">
+                <XStack p="$4" ai="center" jc="space-between">
                   <YStack>
                     <Text fos={20} fontWeight="700">
                       H1 - Headline Large
                     </Text>
-                    <Text color="$gray600" fos={14}>
+                    <Text fos={14} color="$gray600">
                       The quick brown fox jumps...
                     </Text>
                   </YStack>
-                  <Text fos={12} color="$gray600" opacity={0.6}>
+                  <Text fos={12} opacity={0.6} color="$gray600">
                     24PT
                   </Text>
                 </XStack>
@@ -90,46 +90,46 @@ export default function AmasaDesignSystem() {
 
             {/* Button Gallery */}
             <YStack gap="$4">
-              <Text fos={12} fontWeight="700" color="$gray600" tt="uppercase">
+              <Text fos={12} tt="uppercase" fontWeight="700" color="$gray600">
                 Button Gallery
               </Text>
-              <Button bg="$primary" color="white" fontWeight="700" h={56} br="$md">
+              <Button h={56} br="$md" bg="$primary" color="white" fontWeight="700">
                 Primary Button
               </Button>
               <Button
-                bg="transparent"
-                bc="$primary"
                 bw={2}
-                color="$primary"
-                fontWeight="700"
                 h={56}
                 br="$md"
+                bg="transparent"
+                color="$primary"
+                fontWeight="700"
+                borderColor="$primary"
               >
                 Outline Button
               </Button>
               <Button
-                bg="$gray200"
-                color="$gray600"
-                fontWeight="700"
                 h={56}
                 br="$md"
                 disabled
+                bg="$gray200"
                 opacity={0.5}
+                color="$gray600"
+                fontWeight="700"
               >
                 Disabled Button
               </Button>
 
-              <XStack ai="center" gap="$4" mt="$2">
+              <XStack mt="$2" gap="$4" ai="center">
                 <Text fos={14} color="$gray600">
                   Floating Action Button:
                 </Text>
-                <Button circular icon={Plus} size="$5" bg="$primary" color="white" elevate />
+                <Button elevate circular size="$5" icon={Plus} bg="$primary" color="white" />
               </XStack>
             </YStack>
 
             {/* Resident Selection */}
             <YStack gap="$4">
-              <Text fos={12} fontWeight="700" color="$gray600" tt="uppercase">
+              <Text fos={12} tt="uppercase" fontWeight="700" color="$gray600">
                 Resident Type Selection
               </Text>
               <XStack gap="$4">
@@ -137,10 +137,10 @@ export default function AmasaDesignSystem() {
                   <Circle size={48} bg="$gray100">
                     <User color="$gray600" />
                   </Circle>
-                  <Text fontWeight="700" fos={14} mt="$2">
+                  <Text mt="$2" fos={14} fontWeight="700">
                     Resident
                   </Text>
-                  <Text fos={12} color="$gray600" ta="center">
+                  <Text fos={12} ta="center" color="$gray600">
                     Lives in Santo André
                   </Text>
                 </ResidentCard>
@@ -149,10 +149,10 @@ export default function AmasaDesignSystem() {
                   <Circle size={48} bg="$primary">
                     <Building2 color="white" />
                   </Circle>
-                  <Text fontWeight="700" fos={14} mt="$2" color="$primary">
+                  <Text mt="$2" fos={14} fontWeight="700" color="$primary">
                     Property Owner
                   </Text>
-                  <Text fos={12} color="$primary" ta="center" opacity={0.7}>
+                  <Text fos={12} ta="center" opacity={0.7} color="$primary">
                     Owns local estate
                   </Text>
                 </ResidentCard>
@@ -161,19 +161,19 @@ export default function AmasaDesignSystem() {
 
             {/* Financial Card */}
             <YStack gap="$4">
-              <Text fos={12} fontWeight="700" color="$gray600" tt="uppercase">
+              <Text fos={12} tt="uppercase" fontWeight="700" color="$gray600">
                 Financial Overview Card
               </Text>
               <Card
                 p="$6"
-                bg="white"
-                br="$xl"
                 elevate
-                shadowColor="$gray900"
-                shadowOpacity={0.1}
+                br="$xl"
+                bg="white"
                 shadowRadius={10}
+                shadowOpacity={0.1}
+                shadowColor="$gray900"
               >
-                <XStack jc="space-between" ai="flex-start">
+                <XStack ai="flex-start" jc="space-between">
                   <YStack>
                     <Text fos={12} color="$gray600" fontWeight="500">
                       Total Balance
@@ -183,14 +183,14 @@ export default function AmasaDesignSystem() {
                     </Text>
                   </YStack>
                   <Circle size={40} bg="#22C55E15">
-                    <TrendingUp color="$success" size={20} />
+                    <TrendingUp size={20} color="$success" />
                   </Circle>
                 </XStack>
 
                 <Separator my="$4" bc="$gray100" />
 
-                <XStack jc="space-between" ai="center">
-                  <XStack ai="center" gap="$3">
+                <XStack ai="center" jc="space-between">
+                  <XStack gap="$3" ai="center">
                     <Circle size={32} bg="$gray100">
                       <Banknote size={16} color="$gray600" />
                     </Circle>
@@ -203,7 +203,7 @@ export default function AmasaDesignSystem() {
                       </Text>
                     </YStack>
                   </XStack>
-                  <Text color="$primary" fontWeight="700" fos={12}>
+                  <Text fos={12} color="$primary" fontWeight="700">
                     View Bill
                   </Text>
                 </XStack>
