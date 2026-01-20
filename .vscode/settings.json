@@ -1,6 +1,8 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
+    "source.fixAll.eslint": "always",
     "source.organizeImports": "never"
-  }
+  },
+  "editor.formatOnSave": false,
+  "java.compile.nullAnalysis.mode": "automatic"
 }
