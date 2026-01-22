@@ -14,6 +14,15 @@ import {
   Separator,
 } from 'tamagui'
 
+import Heading from './components/Heading'
+import CardAlert from './components/CardAlert'
+import CardStatus from './components/CardStatus'
+import ColorPallet from './components/ColorPallet'
+import CurrentBalanceCard from './components/CardBalance'
+import { WaterUsageCard } from './components/CardWaterUsage'
+import MaintenanceAlertCard from './components/CardMaintenance'
+import { FormInput } from './components/FormInput'
+
 // Componente de Card Customizado para Seleção de Residente
 const ResidentCard = styled(Card, {
   p: '$4',
@@ -61,32 +70,10 @@ export default function AmasaDesignSystem() {
             </YStack>
 
             {/* Typography Section */}
-            <YStack gap="$3">
-              <Text fos={22} fontWeight="700">
-                Typography
-              </Text>
-              <YStack
-                br="$lg"
-                bg="white"
-                ov="hidden"
-                separator={<Separator borderColor="$gray100" />}
-              >
-                <XStack p="$4" ai="center" jc="space-between">
-                  <YStack>
-                    <Text fos={20} fontWeight="700">
-                      H1 - Headline Large
-                    </Text>
-                    <Text fos={14} color="$gray600">
-                      The quick brown fox jumps...
-                    </Text>
-                  </YStack>
-                  <Text fos={12} opacity={0.6} color="$gray600">
-                    24PT
-                  </Text>
-                </XStack>
-                {/* Repetir para H2, Body, etc conforme sua necessidade */}
-              </YStack>
-            </YStack>
+            <Heading />
+
+            {/* Color Palette Section */}
+            <ColorPallet />
 
             {/* Button Gallery */}
             <YStack gap="$4">
@@ -125,6 +112,18 @@ export default function AmasaDesignSystem() {
                 </Text>
                 <Button elevate circular size="$5" icon={Plus} bg="$primary" color="white" />
               </XStack>
+            </YStack>
+
+            <YStack gap="$5" p="$4">
+              <Text fos={12} fontWeight="700" color="$subText" tt="uppercase">Input States</Text>
+              {/* Estado Default */}
+              <FormInput label="Default" placeholder="Digite seu nome completo" />
+
+              {/* Estado Focado (Simulado visualmente ou apenas demonstrativo) */}
+              <FormInput label="Focused" defaultValue="Santo André" borderColor="$primary" borderWidth={2} />
+
+              {/* Estado de Erro */}
+              <FormInput label="Error" defaultValue="invalid-email" error="Por favor, insira um e-mail válido." />
             </YStack>
 
             {/* Resident Selection */}
@@ -209,6 +208,16 @@ export default function AmasaDesignSystem() {
                 </XStack>
               </Card>
             </YStack>
+
+            <WaterUsageCard />
+
+            <CurrentBalanceCard />
+
+            <MaintenanceAlertCard />
+
+            <CardAlert />
+
+            <CardStatus />
           </YStack>
         </YStack>
       </ScrollView>
