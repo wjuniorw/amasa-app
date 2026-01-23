@@ -23,6 +23,10 @@
       "predictiveBackGestureEnabled": false,
       "package": "com.indiedev.amasaapp"
     },
+    "notification": {
+      "icon": "./assets/images/notification-icon.png",
+      "color": "#0066CC"
+    },
     "web": {
       "output": "static",
       "favicon": "./assets/images/favicon.png"
