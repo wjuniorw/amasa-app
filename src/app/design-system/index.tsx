@@ -18,10 +18,10 @@ import Heading from './components/Heading'
 import CardAlert from './components/CardAlert'
 import CardStatus from './components/CardStatus'
 import ColorPallet from './components/ColorPallet'
+import { FormInput } from './components/FormInput'
 import CurrentBalanceCard from './components/CardBalance'
 import { WaterUsageCard } from './components/CardWaterUsage'
 import MaintenanceAlertCard from './components/CardMaintenance'
-import { FormInput } from './components/FormInput'
 
 // Componente de Card Customizado para Seleção de Residente
 const ResidentCard = styled(Card, {
@@ -114,16 +114,27 @@ export default function AmasaDesignSystem() {
               </XStack>
             </YStack>
 
-            <YStack gap="$5" p="$4">
-              <Text fos={12} fontWeight="700" color="$subText" tt="uppercase">Input States</Text>
+            <YStack p="$4" gap="$5">
+              <Text fos={12} tt="uppercase" fontWeight="700" color="$subText">
+                Input States
+              </Text>
               {/* Estado Default */}
               <FormInput label="Default" placeholder="Digite seu nome completo" />
 
               {/* Estado Focado (Simulado visualmente ou apenas demonstrativo) */}
-              <FormInput label="Focused" defaultValue="Santo André" borderColor="$primary" borderWidth={2} />
+              <FormInput
+                label="Focused"
+                borderWidth={2}
+                borderColor="$primary"
+                defaultValue="Santo André"
+              />
 
               {/* Estado de Erro */}
-              <FormInput label="Error" defaultValue="invalid-email" error="Por favor, insira um e-mail válido." />
+              <FormInput
+                label="Error"
+                defaultValue="invalid-email"
+                error="Por favor, insira um e-mail válido."
+              />
             </YStack>
 
             {/* Resident Selection */}

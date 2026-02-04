@@ -9,6 +9,7 @@
       "@main/*": ["./src/main/*"],
       "@auth/*": ["./src/features/auth/*"],
       "@reports/*": ["./src/features/reports/*"],
+      "@factories/*": ["./src/main/factories/*"]
     },
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],

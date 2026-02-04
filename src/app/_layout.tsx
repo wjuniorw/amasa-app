@@ -3,6 +3,7 @@ import { useFonts } from 'expo-font'
 import { TamaguiProvider } from 'tamagui'
 import { useColorScheme } from 'react-native'
 import { Stack, SplashScreen } from 'expo-router'
+import { AuthProvider } from '@auth/context/auth-provider'
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context'
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native'
 
@@ -35,11 +36,13 @@ export default function RootLayout() {
       <SafeAreaProvider>
         <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
           <SafeAreaView style={{ flex: 1, backgroundColor: '#1583f0ff' }}>
-            <Stack
-              screenOptions={{
-                headerShown: false,
-              }}
-            />
+            <AuthProvider>
+              <Stack
+                screenOptions={{
+                  headerShown: false,
+                }}
+              />
+            </AuthProvider>
           </SafeAreaView>
         </ThemeProvider>
       </SafeAreaProvider>
