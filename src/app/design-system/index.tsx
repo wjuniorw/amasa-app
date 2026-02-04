@@ -1,35 +1,26 @@
 import React from 'react'
-import { ScrollView } from 'react-native'
+import { router } from 'expo-router'
+import { Pressable, ScrollView } from 'react-native'
 import { Plus, User, Banknote, ArrowLeft, Building2, TrendingUp } from '@tamagui/lucide-icons'
-import {
-  Text,
-  Card,
-  Input,
-  Theme,
-  YStack,
-  XStack,
-  Button,
-  Circle,
-  styled,
-  Separator,
-} from 'tamagui'
+import { Text, Card, Theme, YStack, XStack, Button, Circle, styled, Separator } from 'tamagui'
 
 import Heading from './components/Heading'
 import CardAlert from './components/CardAlert'
 import CardStatus from './components/CardStatus'
 import ColorPallet from './components/ColorPallet'
 import { FormInput } from './components/FormInput'
+import CardFinance from './components/CardFinance'
 import CurrentBalanceCard from './components/CardBalance'
 import { WaterUsageCard } from './components/CardWaterUsage'
 import MaintenanceAlertCard from './components/CardMaintenance'
 
 // Componente de Card Customizado para Seleção de Residente
 const ResidentCard = styled(Card, {
+  f: 1,
   p: '$4',
   br: '$lg',
   ai: 'center',
   jc: 'center',
-  f: 1,
   borderWidth: 1,
   borderColor: '$gray200',
   pressStyle: { scale: 0.98 },
@@ -52,7 +43,11 @@ export default function AmasaDesignSystem() {
         <YStack f={1} pb="$10">
           {/* Top Bar */}
           <XStack p="$4" bg="white" ai="center" jc="space-between">
-            <ArrowLeft size={24} color="$gray900" />
+            <YStack ai="center" jc="center">
+              <Pressable onPress={() => router.back()}>
+                <ArrowLeft size={24} color="$gray900" />
+              </Pressable>
+            </YStack>
             <Text f={1} pr="$8" ta="center" fontWeight="700">
               AMASA UI Kit
             </Text>
@@ -174,61 +169,43 @@ export default function AmasaDesignSystem() {
               <Text fos={12} tt="uppercase" fontWeight="700" color="$gray600">
                 Financial Overview Card
               </Text>
-              <Card
-                p="$6"
-                elevate
-                br="$xl"
-                bg="white"
-                shadowRadius={10}
-                shadowOpacity={0.1}
-                shadowColor="$gray900"
-              >
-                <XStack ai="flex-start" jc="space-between">
-                  <YStack>
-                    <Text fos={12} color="$gray600" fontWeight="500">
-                      Total Balance
-                    </Text>
-                    <Text fos={28} fontWeight="700">
-                      R$ 1.450,20
-                    </Text>
-                  </YStack>
-                  <Circle size={40} bg="#22C55E15">
-                    <TrendingUp size={20} color="$success" />
-                  </Circle>
-                </XStack>
-
-                <Separator my="$4" bc="$gray100" />
-
-                <XStack ai="center" jc="space-between">
-                  <XStack gap="$3" ai="center">
-                    <Circle size={32} bg="$gray100">
-                      <Banknote size={16} color="$gray600" />
-                    </Circle>
-                    <YStack>
-                      <Text fos={11} fontWeight="700">
-                        IPTU 2024
-                      </Text>
-                      <Text fos={10} color="$gray600">
-                        Scheduled for Oct 15
-                      </Text>
-                    </YStack>
-                  </XStack>
-                  <Text fos={12} color="$primary" fontWeight="700">
-                    View Bill
-                  </Text>
-                </XStack>
-              </Card>
+              <CardFinance />
             </YStack>
 
-            <WaterUsageCard />
+            <YStack gap="$4">
+              <Text fos={12} tt="uppercase" fontWeight="700" color="$gray600">
+                Water Usage Card
+              </Text>
+              <WaterUsageCard />
+            </YStack>
 
-            <CurrentBalanceCard />
+            <YStack gap="$4">
+              <Text fos={12} tt="uppercase" fontWeight="700" color="$gray600">
+                Current Balance Card
+              </Text>
+              <CurrentBalanceCard />
+            </YStack>
 
-            <MaintenanceAlertCard />
+            <YStack gap="$4">
+              <Text fos={12} tt="uppercase" fontWeight="700" color="$gray600">
+                Maintenance Alert Card
+              </Text>
+              <MaintenanceAlertCard />
+            </YStack>
 
-            <CardAlert />
+            <YStack gap="$4">
+              <Text fos={12} tt="uppercase" fontWeight="700" color="$gray600">
+                Alert Card
+              </Text>
+              <CardAlert />
+            </YStack>
 
-            <CardStatus />
+            <YStack gap="$4">
+              <Text fos={12} tt="uppercase" fontWeight="700" color="$gray600">
+                Status Card
+              </Text>
+              <CardStatus />
+            </YStack>
           </YStack>
         </YStack>
       </ScrollView>
